@@ -1,0 +1,257 @@
+.constellation-detail {
+  min-height: 100vh;
+  // background: var(--bg-primary);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+// Hero секция
+.detail-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-glow-cyan);
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 var(--spacing-sm);
+    background: var(--gradient-nebula);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 14, 39, 1) 0%, rgba(10, 14, 39, 0.8) 20%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+
+  .container {
+    padding-bottom: var(--spacing-2xl);
+  }
+}
+
+.latin-name {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0;
+}
+
+// Характеристики
+.characteristics {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
+  padding-top: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.char-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg), 0 0 20px rgba(0, 240, 255, 0.2);
+    border-color: var(--color-cyan);
+  }
+
+  h3 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin: 0 0 var(--spacing-xs);
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+}
+
+.char-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+// Табы
+.tabs {
+  margin-bottom: var(--spacing-2xl);
+
+  &-header {
+    display: flex;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  &-content {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+  }
+}
+
+.tab-btn {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--text-primary);
+    background: rgba(0, 240, 255, 0.05);
+  }
+
+  &.active {
+    color: var(--color-cyan);
+    border-bottom-color: var(--color-cyan);
+  }
+}
+
+.tab-pane {
+  h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+// Звезды
+.stars-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.star-item {
+  background: rgba(26, 31, 58, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 var(--spacing-sm);
+  }
+
+  p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    margin: var(--spacing-xs) 0;
+  }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+  .detail-hero {
+    height: 50vh;
+    min-height: 350px;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .latin-name {
+    font-size: 1.25rem;
+  }
+
+  .char-card {
+    padding: var(--spacing-md);
+  }
+
+  .tabs {
+    &-header {
+      gap: 0;
+    }
+
+    &-content {
+      padding: var(--spacing-lg);
+    }
+  }
+
+  .tab-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9375rem;
+  }
+
+  .tab-pane {
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .stars-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-hero h1 {
+    font-size: 2rem;
+  }
+
+  .latin-name {
+    font-size: 1.125rem;
+  }
+
+  .tabs-content {
+    padding: var(--spacing-md);
+  }
+}

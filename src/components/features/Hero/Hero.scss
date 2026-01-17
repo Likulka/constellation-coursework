@@ -1,0 +1,106 @@
+.hero {
+    padding: 80px 20px;
+    text-align: center;
+    flex: 1;
+    background-image: url('/images/star-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: var(--shadow-glow-purple);
+    
+    h1 {
+        font-size: 52px;
+        font-weight: 700;
+        margin-bottom: var(--spacing-md);
+        background: var(--gradient-nebula);
+        background-clip: clip;
+        -webkit-background-clip: text;                                                                      
+        -webkit-text-fill-color: transparent; 
+    }
+
+    p {
+        opacity: 0.7;
+        margin-bottom: var(--spacing-xl);
+    }
+}
+
+.hero-search {
+    position: relative;
+    max-width: 420px;
+    margin: 0 auto;
+
+    input {
+        width: 100%;
+        padding: 14px 16px;
+        background-color: var(--bg-secondary);
+        border: 2px solid var(--border-color);
+        border-radius: var(--radius-md);
+        transition: box-shadow .3s ease;
+
+        &:focus {
+          box-shadow: var(--shadow-lg) , var(--shadow-glow-cyan);
+          border: 1px, solid var(--color-cyan);
+
+        }
+    }
+
+    &__title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    &__subtitle {
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    &__dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background-color: var(--bg-secondary);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg) , var(--shadow-glow-cyan);
+      border: 2px solid var(--border-color);
+      list-style: none;
+      padding: 8px 0;
+      z-index: 10;
+
+    li {
+      padding: 10px 16px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xs);
+      transition: all .3s ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top:0;
+
+        width: 5px;
+        height: 100%;
+        border-radius: var(--radius-md);
+
+        background: var(--color-cyan);
+        opacity: 0;
+        transform: scaleY(0.6);
+        transition: all 0.2s ease;
+      }
+
+      &:hover {
+        transform: translateY(-1px);
+
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

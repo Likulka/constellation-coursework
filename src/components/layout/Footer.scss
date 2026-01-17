@@ -1,0 +1,11 @@
+footer{
+    background-color: var(--bg-primary);
+}
+
+.footer{
+    padding: var(--spacing-lg);
+    display: flex;
+    justify-content: center;
+    box-shadow: var(--shadow-glow-purple);
+
+}
